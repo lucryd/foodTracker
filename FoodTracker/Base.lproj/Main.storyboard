@@ -23,11 +23,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="V9E-bv-4DN">
-                                <rect key="frame" x="16" y="40" width="343" height="96.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="V9E-bv-4DN">
+                                <rect key="frame" x="16" y="40" width="343" height="438.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ls-a3-6by">
-                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="20.5"/>
+                                        <rect key="frame" x="130" y="0.0" width="83.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -38,45 +38,41 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKy-v0-b4G">
-                                        <rect key="frame" x="0.0" y="66.5" width="151" height="30"/>
-                                        <state key="normal" title="Set Default Label Text"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="lxS-0S-Tv7">
+                                        <rect key="frame" x="11.5" y="66.5" width="320" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lxS-0S-Tv7" secondAttribute="height" multiplier="1:1" id="29y-du-Pcz"/>
+                                            <constraint firstAttribute="width" constant="320" id="HtU-4v-bLN"/>
+                                            <constraint firstAttribute="width" secondItem="lxS-0S-Tv7" secondAttribute="height" multiplier="1:1" id="w1f-96-C9F"/>
+                                            <constraint firstAttribute="height" constant="320" id="xEr-Pq-4c1"/>
+                                            <constraint firstAttribute="width" secondItem="lxS-0S-Tv7" secondAttribute="height" multiplier="1:1" id="z0G-Yy-Ya6"/>
+                                        </constraints>
                                         <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uHG-Qy-uxh"/>
+                                            <outletCollection property="gestureRecognizers" destination="GPO-MW-Fh6" appends="YES" id="Ixn-bX-TCB"/>
                                         </connections>
-                                    </button>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TS5-0s-1Ag" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="45.5" y="394.5" width="252" height="44"/>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1kI-48-yph" secondAttribute="trailing" id="MHe-8h-bsp"/>
                                 </constraints>
                             </stackView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="lxS-0S-Tv7">
-                                <rect key="frame" x="16" y="144" width="320" height="320"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lxS-0S-Tv7" secondAttribute="height" multiplier="1:1" id="29y-du-Pcz"/>
-                                    <constraint firstAttribute="width" constant="320" id="HtU-4v-bLN"/>
-                                    <constraint firstAttribute="width" secondItem="lxS-0S-Tv7" secondAttribute="height" multiplier="1:1" id="w1f-96-C9F"/>
-                                    <constraint firstAttribute="height" constant="320" id="xEr-Pq-4c1"/>
-                                    <constraint firstAttribute="width" secondItem="lxS-0S-Tv7" secondAttribute="height" multiplier="1:1" id="z0G-Yy-Ya6"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="GPO-MW-Fh6" appends="YES" id="Ixn-bX-TCB"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="V9E-bv-4DN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="XSm-hl-tC6"/>
                             <constraint firstItem="V9E-bv-4DN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fmZ-Ig-A0O"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V9E-bv-4DN" secondAttribute="trailing" id="fpp-se-p2t"/>
-                            <constraint firstItem="lxS-0S-Tv7" firstAttribute="top" secondItem="V9E-bv-4DN" secondAttribute="bottom" constant="8" id="mP1-4q-X3t"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="4ls-a3-6by" id="tWO-wB-Phc"/>
                         <outlet property="nameTextField" destination="1kI-48-yph" id="wvd-0Z-a5l"/>
                         <outlet property="photoImageView" destination="lxS-0S-Tv7" id="Ok7-XV-I2x"/>
+                        <outlet property="ratingControl" destination="TS5-0s-1Ag" id="uFz-cu-zeI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,6 +86,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultPhoto" width="750" height="750"/>
+        <image name="defaultPhoto" width="540" height="540"/>
     </resources>
 </document>
